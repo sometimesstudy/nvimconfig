@@ -1,6 +1,6 @@
-[toc]
 ## 我的neovim配置文件 --- 猛男必备
 !!! **需要修改的地方**
+
 let g:python3_host_prog="自己的python3地址"
 
 let g:mkdp_broswer="自己的chrome浏览器地址"

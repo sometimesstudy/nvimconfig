@@ -1,4 +1,5 @@
 ## 我的neovim配置文件 --- 猛男必备 欢迎star和issue
+看了觉得舒服拉屎的风景
 !!! **需要修改的地方**
 
 let g:python3_host_prog="自己的python3地址"
@@ -59,4 +60,4 @@ vim-startify 给nvim添加首页标签
 vim-airline，vim-airline-themes 美化状态栏  
 semshi 美化python代码， 可以在类和函数中追踪并高亮变量,以及批量重命名 :Semshi rename   
 vim-devicons 给各种文件添加自己的标志  
-
+发生大开发红烧豆腐

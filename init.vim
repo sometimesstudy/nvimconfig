@@ -31,6 +31,12 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'xcodebuild/fcitx-remote-for-osx'
+Plug 'airblade/vim-gitgutter'
+Plug 'jpalardy/vim-slime'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'liuchengxu/vista.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 colorscheme gruvbox
 nnoremap jk :wq<CR>
@@ -59,6 +65,7 @@ let g:ctrlp_map = '<c-p>'
 " TextEdit might fail if hidden is not set.
 noremap J 5j
 noremap K 5k
+inoremap oo <Esc>o
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -140,8 +147,7 @@ let g:semshi#update_delay_factor=0.0001
 let g:move_key_modifier = 'C'
 map cc <leader>cc
 map cu <leader>cu
-nnoremap <leader>q :q<CR>
-map <leader>qq :q!<CR>
+nnoremap <leader>q :q!<CR>
 noremap <LEADER>v :Vista coc<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -175,4 +181,15 @@ noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 " search visually selected text literally
 xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
-
+autocmd VimEnter,FocusLost * set imdisable
+autocmd FocusGained,InsertEnter * set noimdisable
+set updatetime=100 
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_python_ipython=1
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

@@ -40,6 +40,8 @@ leaderF 模糊查找工具，暂且添加到移动类里面
 + ,l 寻找当前buffer的行
 + \<Tab>可进入下拉框进行选择
 + <C-c> 退出leaderF
+far 批量替换工具
++ :Far char1 char2 [配对文件]执行模糊替换
 
 vim-easymotion 快速移动到目标单词 快捷键 s \<char1>\<char2> 输入目标单词的两个字母，easy-motion会显示编号，选择目标单词的编号 S \<char> 选择一个单词  
 ##### 4.3 改动类

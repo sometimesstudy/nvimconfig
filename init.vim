@@ -38,6 +38,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'mbbill/undotree'
+Plug 'brooth/far.vim'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 colorscheme gruvbox
 nnoremap jk :wq<CR>

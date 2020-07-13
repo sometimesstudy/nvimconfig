@@ -35,8 +35,9 @@ Plug 'xcodebuild/fcitx-remote-for-osx'
 Plug 'airblade/vim-gitgutter'
 Plug 'jpalardy/vim-slime'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
+Plug 'mbbill/undotree'
 call plug#end()
 colorscheme gruvbox
 nnoremap jk :wq<CR>
@@ -73,7 +74,7 @@ set relativenumber
 let g:input_toggle = 0
 
 set timeoutlen=150
-nnoremap <lPlug 'chiel92/vim-autoformat'eader>t :TagbarToggle<CR>
+nnoremap <leader>t:TagbarToggle<CR>
 nnoremap <C-w> <C-w>w
 let g:python3_host_prog="/Users/king/anaconda3/bin/python3"
 "Python 格式化代码
@@ -144,20 +145,10 @@ let g:semshi#always_update_all_highlights='v:false'
 hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
 let g:semshi#no_default_builtin_highlight=v:false
 let g:semshi#update_delay_factor=0.0001
-let g:move_key_modifier = 'C'
-map cc <leader>cc
-map cu <leader>cu
+let g:ove_key_modmifier = 'C'
+map <c-m> <leader>cc
+map <c-n> <leader>cu
 nnoremap <leader>q :q!<CR>
-noremap <LEADER>v :Vista coc<CR>
-noremap <c-t> :silent! Vista finder coc<CR>
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'ctags'
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
 "leaderF 配置
 " don't show the help in normal mode
 let g:Lf_HideHelp = 1
@@ -172,7 +163,7 @@ let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 
 let g:Lf_ShortcutF = "<leader>f"
 noremap ,b :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap ,fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap ,f :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap ,t :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap ,l :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
@@ -183,7 +174,7 @@ xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
 autocmd VimEnter,FocusLost * set imdisable
 autocmd FocusGained,InsertEnter * set noimdisable
-set updatetime=100 
+set updatetime=100
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_python_ipython=1
@@ -193,3 +184,28 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+" 设置ale的代码检测符号
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+"设置vim代码折叠为缩进
+set foldmethod=indent
+set viewoptions=cursor,folds,slash,unix
+set wrap
+set tw=0
+set foldlevel=99
+set foldenable
+set formatoptions-=tc
+noremap <leader>u :UndotreeToggle<CR>
+let g:undotree_DiffAutoOpen = 1
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffpanelHeight = 8
+let g:undotree_SplitWidth = 24
+function g:Undotree_CustomMap()
+	nmap <buffer> u <plug>UndotreeNextState
+	nmap <buffer> e <plug>UndotreePreviousState
+	nmap <buffer> U 5<plug>UndotreeNextState
+	nmap <buffer> E 5<plug>UndotreePreviousState
+endfunc
+let g:move_key_modifier = 'C'

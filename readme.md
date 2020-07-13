@@ -1,5 +1,4 @@
 ## 我的neovim配置文件 --- 猛男必备 欢迎star和issue
-看了觉得舒服拉屎的风景
 !!! **需要修改的地方**
 
 let g:python3_host_prog="自己的python3地址"

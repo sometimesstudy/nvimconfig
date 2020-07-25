@@ -40,11 +40,12 @@ leaderF 模糊查找工具，暂且添加到移动类里面
 + ,l 寻找当前buffer的行
 + \<Tab>可进入下拉框进行选择
 + <C-c> 退出leaderF
-far 批量替换工具
-+ :Far char1 char2 [配对文件]执行模糊替换
 
 vim-easymotion 快速移动到目标单词 快捷键 s \<char1>\<char2> 输入目标单词的两个字母，easy-motion会显示编号，选择目标单词的编号 S \<char> 选择一个单词  
 ##### 4.3 改动类
+far 批量替换工具
++ :Far char1 char2 [配对文件]执行模糊替换
+
 vim-surround 成对替换 cs " '将包围单词的"替换成' ds 删除 ysiw " 对单词添加； yss 对段落添加
 vim-move 实现类似vscode alt+<Up> alt+<Down>实现将段落上移下移的操作，配置将alt改成了ctrl  
 vim本身实现的改动 diw 删除单词并进入修改模式 daw删除单词以及单词的空格 dd 剪切整段 y复制单词 yy整段 p粘贴 

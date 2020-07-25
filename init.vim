@@ -31,7 +31,6 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'xcodebuild/fcitx-remote-for-osx'
 Plug 'airblade/vim-gitgutter'
 Plug 'jpalardy/vim-slime'
 Plug 'kien/rainbow_parentheses.vim'
@@ -39,7 +38,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'mbbill/undotree'
 Plug 'brooth/far.vim'
-Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 colorscheme gruvbox
 nnoremap jk :wq<CR>
@@ -84,7 +83,6 @@ inoremap pp <Right>:<CR>
 nnoremap <leader>p $
 inoremap slef self
 inoremap ,, <Right>
-inoremap <C-z> <C-n>
 map <F5> :call CompileRunGcc()<CR>
 "一键运行代码
 map <F5> :call CompileRunGcc()<CR>
@@ -148,8 +146,6 @@ hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
 let g:semshi#no_default_builtin_highlight=v:false
 let g:semshi#update_delay_factor=0.0001
 let g:ove_key_modmifier = 'C'
-map <c-m> <leader>cc
-map <c-n> <leader>cu
 nnoremap <leader>q :q!<CR>
 "leaderF 配置
 " don't show the help in normal mode
@@ -211,3 +207,5 @@ function g:Undotree_CustomMap()
 	nmap <buffer> E 5<plug>UndotreePreviousState
 endfunc
 let g:move_key_modifier = 'C'
+"不区分大小写查询
+:set ic

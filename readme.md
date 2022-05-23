@@ -1,4 +1,4 @@
-## 我的neovim配置文件 --- 猛男必备 欢迎star和issue
+## neovim配置文件
 !!! **需要修改的地方**
 
 let g:python3_host_prog="自己的python3地址"
